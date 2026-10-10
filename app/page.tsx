@@ -40,7 +40,7 @@ export default function Home() {
     image: abs("/umkm/img/hero-cireng.jpg"),
     logo: abs("/umkm/img/logo.svg"),
     telephone: `+${siteConfig.whatsapp}`,
-    priceRange: "Rp15.000 - Rp35.000",
+    priceRange: "Rp10.000 - Rp180.000",
     servesCuisine: "Indonesian Snack",
     currenciesAccepted: "IDR",
     paymentAccepted: "Transfer Bank, E-Wallet, QRIS, COD",

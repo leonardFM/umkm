@@ -4,25 +4,33 @@ export function waLink(message: string): string {
   return `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
-export function orderMessage(productName: string, qty: number = 1): string {
+export function orderMessage(
+  productName: string,
+  qty: number = 1,
+  unit: string = "pack",
+  detail?: string,
+): string {
   const jumlah = qty > 0 ? qty : 1;
-  return `Halo admin, saya mau pesan Cireng (Pack isi 5): ${productName} sebanyak ${jumlah} pack. Mohon info total dan ongkirnya.`;
+  const label = detail ? `${productName} (${detail})` : productName;
+  return `Halo admin, saya mau pesan: ${label} sebanyak ${jumlah} ${unit}. Mohon info total dan ongkirnya.`;
 }
 
 export type OrderItem = {
   name: string;
-  isi?: string;
+  composition?: string;
+  unit?: string;
   qty: number;
 };
 
 export function multiOrderMessage(items: OrderItem[]): string {
   const lines = items
     .filter((item) => item.qty > 0)
-    .map((item) =>
-      item.isi
-        ? `- ${item.name} (${item.isi}) sebanyak ${item.qty} pack`
-        : `- ${item.name} x${item.qty}`,
-    );
+    .map((item) => {
+      const detail = item.composition;
+      return detail
+        ? `- ${item.name} (${detail}) sebanyak ${item.qty} ${item.unit ?? "pack"}`
+        : `- ${item.name} x${item.qty}`;
+    });
   return `Halo admin, saya mau pesan:\n${lines.join("\n")}\n\nMohon info total dan ongkirnya.`;
 }
 

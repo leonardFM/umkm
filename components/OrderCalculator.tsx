@@ -2,9 +2,21 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { addOns, categories, packOptions } from "@/lib/products";
+import {
+  addOns,
+  categories,
+  packOptions,
+  type ProductCategory,
+} from "@/lib/products";
 import { formatRupiah, multiOrderMessage, waLink } from "@/lib/whatsapp";
 import { CheckIcon, WhatsAppIcon } from "./icons";
+
+const categoryLabel: Record<ProductCategory, string> = {
+  Cireng: "Cireng",
+  Dimsum: "Dimsum",
+  Minuman: "Minuman",
+  Paket: "Paket Combo",
+};
 
 const MIN_QTY = 0;
 const MAX_QTY = 99;
@@ -111,7 +123,8 @@ export default function OrderCalculator() {
     const items = [
       ...selectedProducts.map((option) => ({
         name: option.name,
-        isi: option.isi,
+        composition: option.composition,
+        unit: option.unit,
         qty: quantities[option.id],
       })),
       ...selectedAddOns.map((item) => ({
@@ -151,7 +164,7 @@ export default function OrderCalculator() {
             return (
               <fieldset key={category}>
                 <legend className="text-sm font-bold uppercase tracking-wide text-ink-soft/70">
-                  {category === "Cireng" ? "Cireng" : "Dimsum"}
+                  {categoryLabel[category]}
                 </legend>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {options.map((option) => {
