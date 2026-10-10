@@ -3,6 +3,7 @@ import { Baloo_2, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingWA from "@/components/FloatingWA";
 import { siteConfig } from "@/lib/site";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -107,6 +108,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         {children}
         <Footer />
+        <FloatingWA />
       </body>
     </html>
   );

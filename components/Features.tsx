@@ -9,75 +9,57 @@ import {
 type Feature = {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
-  description: string;
   tone: string;
 };
 
 const features: Feature[] = [
   {
     icon: LeafIcon,
-    title: "Diproses Bersih & Higienis",
-    description:
-      "Dibuat fresh dengan bahan pilihan dan diproses di dapur yang bersih serta higienis, tanpa pengawet dan tanpa MSG berlebih.",
+    title: "Higienis & Fresh",
     tone: "from-emerald-500 to-green-600",
   },
   {
     icon: DropletIcon,
-    title: "Sambal & Bumbu Resep Rahasia",
-    description:
-      "Cireng disajikan dengan saus rujak gula aren yang legit dan segar, dimsum dengan chili oil gurih — resep khas yang bikin makin nagih.",
+    title: "Bumbu Resep Rahasia",
     tone: "from-brand to-chili",
   },
   {
     icon: CrispyIcon,
-    title: "Cireng Krispi, Dimsum Lembut",
-    description:
-      "Cireng renyah di luar dan kenyal di dalam, sementara dimsum kami lembut dan gurih. Tersedia banyak varian favorit.",
+    title: "Krispi & Lembut",
     tone: "from-amber-500 to-brand",
   },
   {
     icon: SnowflakeIcon,
-    title: "Fresh, Siap Saji, atau Frozen",
-    description:
-      "Pilih cireng atau dimsum, dikirim hangat siap santap atau frozen yang tahan hingga 1 bulan di freezer rumahmu.",
+    title: "Siap Saji / Frozen",
     tone: "from-sky-500 to-cyan-600",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="keunggulan" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
-        <span className="text-sm font-bold uppercase tracking-[0.2em] text-brand">
-          Kenapa Cireng Abidzar?
-        </span>
-        <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-          Gurih, Pedas, dan Bikin Nagih
-        </h2>
-        <p className="mt-4 text-base leading-relaxed text-ink-soft/85">
-          Bukan camilan biasa. Setiap pack dibuat dengan standar rasa dan
-          kualitas yang bikin pelanggan balik lagi.
-        </p>
-      </div>
+    <section
+      id="keunggulan"
+      className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
+    >
+      <h2 className="text-center font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+        Kenapa Cireng Abidzar?
+      </h2>
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {features.map(({ icon: Icon, title, description, tone }) => (
-          <article
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        {features.map(({ icon: Icon, title, tone }) => (
+          <div
             key={title}
-            className="group relative flex flex-col rounded-3xl border border-brand/10 bg-cream-100 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/30 hover:shadow-xl hover:shadow-brand/10"
+            className="flex flex-col items-center gap-3 rounded-2xl border border-brand/10 bg-cream-100 px-4 py-5 text-center shadow-sm"
           >
             <span
-              className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${tone} text-white shadow-md`}
+              className={`inline-flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${tone} text-white shadow-md`}
             >
-              <Icon className="h-6 w-6" />
+              <Icon className="h-5 w-5" />
             </span>
-            <h3 className="mt-5 font-display text-lg font-bold leading-snug text-ink">
+            <span className="font-display text-sm font-bold leading-snug text-ink">
               {title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-soft/85">
-              {description}
-            </p>
-          </article>
+            </span>
+          </div>
         ))}
       </div>
     </section>

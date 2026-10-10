@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Catalog from "@/components/Catalog";
 import OrderCalculator from "@/components/OrderCalculator";
-import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
 import { products } from "@/lib/products";
 import { faqs } from "@/lib/faqs";
@@ -102,10 +101,9 @@ export default function Home() {
       <JsonLd data={faqSchema} />
 
       <Hero />
-      <Features />
       <Catalog />
+      <Features />
       <OrderCalculator />
-      <Testimonials />
       <Faq />
     </main>
   );

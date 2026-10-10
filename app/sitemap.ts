@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   "use cache";
   const lastModified = new Date();
-  const sections = ["", "#katalog", "#keunggulan", "#testimoni", "#faq"];
+  const sections = ["", "#katalog", "#keunggulan", "#pesan", "#faq"];
 
   return sections.map((section, index) => ({
     url: `${siteConfig.url}/${section}`,

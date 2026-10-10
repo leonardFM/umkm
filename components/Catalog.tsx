@@ -10,7 +10,7 @@ import {
   type ProductTag,
 } from "@/lib/products";
 import { formatRupiah, orderMessage, waLink } from "@/lib/whatsapp";
-import { CheckIcon, WhatsAppIcon } from "./icons";
+import { WhatsAppIcon } from "./icons";
 
 const tagStyles: Record<ProductTag, string> = {
   "Best Seller": "bg-amber-400 text-ink",
@@ -115,58 +115,46 @@ export default function Catalog() {
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col p-5">
+              <div className="flex flex-1 flex-col p-4 sm:p-5">
                 <h3 className="font-display text-lg font-bold leading-snug text-ink">
                   {product.name}
                 </h3>
-                <p className="mt-1.5 text-xs font-semibold text-brand">
+                <p className="mt-1 text-xs font-semibold text-brand">
                   {product.highlight}
                 </p>
-                <p className="mt-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[0.7rem] font-semibold text-emerald-800 ring-1 ring-emerald-500/20">
-                    <CheckIcon className="h-3.5 w-3.5 text-emerald-600" />
-                    {product.includes}
-                  </span>
-                </p>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft/85">
-                  {product.description}
-                </p>
 
-                <div className="mt-5 flex items-end justify-between gap-3 border-t border-brand/10 pt-4">
-                  <div>
-                    <span className="block text-[0.7rem] font-medium uppercase tracking-wide text-ink-soft/60">
-                      Harga mulai
-                    </span>
+                <div className="mt-auto pt-4">
+                  <div className="flex items-baseline gap-2">
                     <span className="font-display text-xl font-extrabold text-ink">
                       {formatRupiah(product.price)}
                     </span>
-                    <span className="ml-1 text-xs font-medium text-ink-soft/70">
+                    <span className="text-xs font-medium text-ink-soft/70">
                       /{product.unit}
                     </span>
                     {product.compareAt && (
-                      <span className="ml-2 text-xs font-medium text-ink-soft/50 line-through">
+                      <span className="text-xs font-medium text-ink-soft/50 line-through">
                         {formatRupiah(product.compareAt)}
                       </span>
                     )}
                   </div>
-                </div>
 
-                <a
-                  href={waLink(
-                    orderMessage(
-                      product.name,
-                      1,
-                      product.unit,
-                      product.composition,
-                    ),
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-wa px-5 py-3.5 text-sm font-bold text-white shadow-md shadow-wa/30 transition-colors hover:bg-wa-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-wa-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  Beli via WA
-                </a>
+                  <a
+                    href={waLink(
+                      orderMessage(
+                        product.name,
+                        1,
+                        product.unit,
+                        product.composition,
+                      ),
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-wa px-5 py-3 text-sm font-bold text-white shadow-md shadow-wa/30 transition-colors hover:bg-wa-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-wa-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+                  >
+                    <WhatsAppIcon className="h-4 w-4" />
+                    Beli via WA
+                  </a>
+                </div>
               </div>
             </article>
           ))}
