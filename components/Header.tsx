@@ -7,7 +7,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { waLink } from "@/lib/whatsapp";
 
 const heroMessage =
-  "Halo admin Cireng Abidzar, saya ingin pesan Cireng Isi / Dimsum. Boleh dibantu info paket dan harganya?";
+  "Halo admin, saya mau pesan Cireng Rujak Krispi (Pack isi 5). Mohon info varian, total, dan ongkirnya.";
 
 export default function Header() {
   const [open, setOpen] = useState(false);

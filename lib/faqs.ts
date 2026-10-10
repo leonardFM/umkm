@@ -10,19 +10,19 @@ export const faqs: Faq[] = [
       "Kami mengirim setiap hari dari Bandung menggunakan kurir instan (area Bandung) dan ekspedisi untuk luar kota. Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama. Estimasi tiba 1-3 hari kerja untuk luar kota, dan cireng dikemas dengan es gel agar tetap beku.",
   },
   {
-    question: "Apakah cireng dan dimsum frozen tahan lama?",
+    question: "Apakah cireng frozen tahan lama?",
     answer:
-      "Ya! Semua produk frozen kami tahan hingga 1 bulan jika disimpan di freezer pada suhu -18°C. Setelah dibuka, sebaiknya segera dimasak atau disimpan kembali dalam wadah kedap udara di freezer.",
+      "Ya! Semua cireng frozen kami tahan hingga 1 bulan jika disimpan di freezer pada suhu -18°C. Setelah dibuka, sebaiknya segera dimasak atau disimpan kembali dalam wadah kedap udara di freezer.",
   },
   {
-    question: "Bagaimana cara memasak cireng dan dimsum frozen?",
+    question: "Bagaimana cara memasak cireng frozen?",
     answer:
-      "Untuk cireng: panaskan minyak dengan api sedang, goreng langsung dari freezer tanpa dicairkan selama 2-3 menit hingga keemasan, lalu tiriskan dan sajikan dengan sambung/bumbu. Untuk dimsum: kukus 8-10 menit dari freezer (beri alas kertas agar tidak lengket). Dimsum goreng bisa langsung digoreng hingga krispi. Hindari api besar agar bagian dalam matang sempurna.",
+      "Panaskan minyak dengan api sedang, goreng cireng langsung dari freezer tanpa dicairkan selama 2-3 menit hingga keemasan. Tiriskan lalu sajikan dengan bumbu rujak. Hindari api besar agar bagian dalam matang sempurna dan teksturnya tetap kenyal.",
   },
   {
-    question: "Apakah bahan-bahannya halal dan aman?",
+    question: "Apakah cireng dibuat bersih dan higienis?",
     answer:
-      "100% halal dan aman. Kami hanya menggunakan bahan alami tanpa pengawet, tanpa pemanis buatan, dan tanpa MSG berlebih. Dapur kami dikelola dengan standar kebersihan yang ketat.",
+      "Tentu. Setiap cireng dibuat fresh dengan bahan pilihan dan diproses di dapur yang bersih serta higienis, tanpa pengawet dan tanpa MSG berlebih. Kami menjaga kualitas dan kebersihan di setiap tahap produksi.",
   },
   {
     question: "Minimal order dan menerima reseller atau hampers?",

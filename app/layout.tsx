@@ -17,29 +17,26 @@ const baloo = Baloo_2({
   display: "swap",
 });
 
-const ogImage = "/images/og-image.png";
+const ogImage = "/umkm/img/og-image.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "Cireng Abidzar | Jual Cireng Isi & Dimsum Frozen Enak, Krispi & Halal",
+      "Cireng Abidzar | Jual Cireng Rujak Krispi Enak & Fresh",
     template: "%s | Cireng Abidzar",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    "jual cireng isi",
+    "jual cireng rujak",
+    "cireng rujak krispi",
+    "cireng original bumbu rujak",
     "cireng isi ayam suwir pedas",
-    "cireng isi mozzarella",
-    "cireng isi sosis",
-    "cireng isi bakso",
-    "cireng isi abon",
-    "dimsum frozen enak",
-    "dimsum ayam premium",
-    "dimsum mentai",
-    "camilan frozen online",
-    "reseller cireng dan dimsum",
+    "cireng mozzarella melt",
+    "paket combo cireng",
+    "camilan cireng online",
+    "reseller cireng",
     "cireng abidzar",
   ],
   authors: [{ name: siteConfig.name }],
@@ -54,20 +51,20 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Cireng Abidzar | Cireng Isi & Dimsum Krispi Outside, Chewy Inside",
+    title: "Cireng Abidzar | Cireng Rujak Krispi, Krispi di Luar Kenyal di Dalam",
     description: siteConfig.description,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Cireng Abidzar - aneka cireng isi dan dimsum krispi siap goreng dan kukus",
+        alt: "Cireng Abidzar - cireng rujak krispi dengan bumbu rujak gula aren",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cireng Abidzar | Jual Cireng Isi & Dimsum Frozen Enak",
+    title: "Cireng Abidzar | Jual Cireng Rujak Krispi Enak",
     description: siteConfig.description,
     images: [ogImage],
   },

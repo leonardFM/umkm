@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Cireng Abidzar",
   legalName: "Cireng Abidzar",
-  tagline: "Cireng Isi & Dimsum Krispi Outside, Chewy Inside",
+  tagline: "Cireng Rujak Krispi — Krispi di Luar, Kenyal di Dalam",
   description:
-    "Jual aneka Cireng Isi (ayam suwir pedas, mozzarella, sosis, bakso, abon) dan Dimsum (ayam, mentai, mozzarella, goreng crispy) frozen siap goreng/kukus. 100% bahan alami & halal. Pesan mudah via WhatsApp.",
+    "Jual Cireng Rujak Krispi dengan bumbu rujak gula aren khas, tersedia varian original, isi ayam suwir pedas, mozzarella melt, dan paket combo hemat. Dibuat fresh, bersih, dan higienis. Pesan mudah via WhatsApp.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cireng-abidzar.vercel.app",
-  whatsapp: "6281234567890",
-  whatsappDisplay: "+62 812-3456-7890",
+  whatsapp: "62895613163308",
+  whatsappDisplay: "+62 895-6131-63308",
   address: {
     street: "Jl. Rujak Gurih No. 12, Sukajadi",
     city: "Bandung",

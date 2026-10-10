@@ -11,6 +11,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified,
     changeFrequency: index === 0 ? "weekly" : "monthly",
     priority: index === 0 ? 1 : 0.7,
-    images: index === 0 ? [`${siteConfig.url}/images/hero-cireng.png`] : undefined,
+    images: index === 0 ? [`${siteConfig.url}/umkm/img/hero-cireng.jpg`] : undefined,
   }));
 }

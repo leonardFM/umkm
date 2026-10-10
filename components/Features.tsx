@@ -16,16 +16,16 @@ type Feature = {
 const features: Feature[] = [
   {
     icon: LeafIcon,
-    title: "100% Bahan Alami & Halal",
+    title: "Diproses Bersih & Higienis",
     description:
-      "Tanpa pengawet dan MSG berlebih. Bahan pilihan yang bersih, aman, dan sudah tersertifikasi halal.",
+      "Dibuat fresh dengan bahan pilihan dan diproses di dapur yang bersih serta higienis, tanpa pengawet dan tanpa MSG berlebih.",
     tone: "from-emerald-500 to-green-600",
   },
   {
     icon: DropletIcon,
-    title: "Isian Melimpah & Variatif",
+    title: "Bumbu Rujak Resep Rahasia",
     description:
-      "Dari ayam suwir pedas, mozzarella lumer, sosis, bakso, abon, sampai dimsum premium — isinya royal dan banyak pilihan.",
+      "Saus rujak gula aren yang legit, pedas, dan segar — resep khas yang bikin cireng makin nagih.",
     tone: "from-brand to-chili",
   },
   {

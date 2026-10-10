@@ -10,7 +10,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { waLink } from "@/lib/whatsapp";
 
 const footerMessage =
-  "Halo admin Cireng Abidzar, saya mau tanya-tanya dan pesan cireng isi / dimsum. Mohon dibantu ya!";
+  "Halo admin, saya mau pesan Cireng Rujak Krispi (Pack isi 5). Mohon info varian, total, dan ongkirnya.";
 
 async function getCopyrightYear(): Promise<number> {
   "use cache";
@@ -29,7 +29,7 @@ export default async function Footer() {
             <Logo tone="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/75">
               Cireng rujak krispi di luar, kenyal di dalam. Dibuat fresh setiap
-              hari dengan bahan alami & 100% halal.
+              hari dengan bahan pilihan dan proses yang bersih.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <a

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { packOptions } from "@/lib/products";
-import { formatRupiah, waLink } from "@/lib/whatsapp";
+import { formatRupiah, orderMessage, waLink } from "@/lib/whatsapp";
 import { CheckIcon, SparkleIcon, WhatsAppIcon } from "./icons";
 
 const MIN_QTY = 1;
@@ -21,18 +21,10 @@ export default function OrderCalculator() {
   const compareTotal = (selected.compareAt ?? selected.price) * qty;
   const savings = compareTotal - subtotal;
 
-  const message = useMemo(() => {
-    const lines = [
-      "Halo admin Cireng Abidzar, saya ingin pesan:",
-      `• ${selected.name} x${qty} pack`,
-      `Estimasi total: ${formatRupiah(subtotal)}`,
-    ];
-    if (savings > 0) {
-      lines.push(`Hemat: ${formatRupiah(savings)}`);
-    }
-    lines.push("Mohon info ketersediaan, ongkir, dan cara pembayarannya. Terima kasih!");
-    return lines.join("\n");
-  }, [selected.name, qty, subtotal, savings]);
+  const message = useMemo(
+    () => orderMessage(selected.name, qty),
+    [selected.name, qty],
+  );
 
   const updateQty = (next: number) => {
     if (Number.isNaN(next)) return;

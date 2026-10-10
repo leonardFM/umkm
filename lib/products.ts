@@ -1,44 +1,54 @@
-export type ProductTag = "Best Seller" | "Pedas" | "Favorit";
-export type ProductCategory = "Cireng Isi" | "Dimsum";
+export type ProductTag = "Best Seller" | "Pedas" | "Favorit" | "Hemat";
 
 export type Product = {
   id: string;
   name: string;
-  category: ProductCategory;
   tag: ProductTag;
-  tagTone: "amber" | "red" | "orange";
+  tagTone: "amber" | "red" | "orange" | "emerald";
   description: string;
   highlight: string;
   price: number;
+  compareAt?: number;
   unit: string;
   isi: string;
   image: string;
   imageAlt: string;
 };
 
-export const categories: ProductCategory[] = ["Cireng Isi", "Dimsum"];
-
 export const products: Product[] = [
+  {
+    id: "cireng-original",
+    name: "Cireng Original Bumbu Rujak",
+    tag: "Best Seller",
+    tagTone: "amber",
+    description:
+      "Cireng rujak krispi dengan bumbu rujak gula aren yang legit, pedas, dan segar. Renyah di luar, kenyal di dalam.",
+    highlight: "Bumbu rujak resep rahasia",
+    price: 15000,
+    unit: "pack",
+    isi: "isi 5 pcs",
+    image: "/umkm/img/cireng-original.jpg",
+    imageAlt:
+      "Cireng original bumbu rujak krispi dengan saus rujak gula aren khas Cireng Abidzar",
+  },
   {
     id: "cireng-ayam",
     name: "Cireng Isi Ayam Suwir Pedas",
-    category: "Cireng Isi",
-    tag: "Best Seller",
-    tagTone: "amber",
+    tag: "Pedas",
+    tagTone: "red",
     description:
       "Isian ayam suwir berbumbu cabai yang melimpah, pedas nampol dengan aroma bawang yang menggoda.",
     highlight: "Isian ayam melimpah & pedas",
     price: 20000,
     unit: "pack",
-    isi: "isi 8 pcs",
-    image: "/images/cireng-ayam.png",
+    isi: "isi 5 pcs",
+    image: "/umkm/img/cireng-ayam.jpg",
     imageAlt:
       "Cireng isi ayam suwir pedas dengan isian cabai merah melimpah khas Cireng Abidzar",
   },
   {
-    id: "cireng-mozzarella",
-    name: "Cireng Isi Mozzarella Melt",
-    category: "Cireng Isi",
+    id: "cireng-mozarella",
+    name: "Cireng Mozzarella Melt",
     tag: "Favorit",
     tagTone: "orange",
     description:
@@ -46,115 +56,26 @@ export const products: Product[] = [
     highlight: "Mozzarella premium meleleh",
     price: 25000,
     unit: "pack",
-    isi: "isi 8 pcs",
-    image: "/images/cireng-mozzarella.png",
+    isi: "isi 5 pcs",
+    image: "/umkm/img/cireng-mozarella.jpg",
     imageAlt:
-      "Cireng isi mozzarella melt dengan keju premium yang meleleh kenyal",
+      "Cireng mozzarella melt dengan keju premium yang meleleh kenyal",
   },
   {
-    id: "cireng-sosis",
-    name: "Cireng Isi Sosis Sapi",
-    category: "Cireng Isi",
-    tag: "Favorit",
-    tagTone: "orange",
+    id: "cireng-combo",
+    name: "Paket Combo Hemat",
+    tag: "Hemat",
+    tagTone: "emerald",
     description:
-      "Potongan sosis sapi panggang di dalam cireng krispi. Gurih, juicy, dan cocok untuk semua usia.",
-    highlight: "Sosis sapi panggang juicy",
-    price: 22000,
-    unit: "pack",
-    isi: "isi 8 pcs",
-    image: "/images/cireng-sosis.png",
-    imageAlt: "Cireng isi sosis sapi panggang dengan potongan sosis gurih",
-  },
-  {
-    id: "cireng-bakso",
-    name: "Cireng Isi Bakso Pedas",
-    category: "Cireng Isi",
-    tag: "Pedas",
-    tagTone: "red",
-    description:
-      "Bakso sapi kenyal berpadu sambal pedas di dalam cireng renyah. Sensasi sekali gigit yang nagih.",
-    highlight: "Bakso kenyal + sambal pedas",
-    price: 22000,
-    unit: "pack",
-    isi: "isi 8 pcs",
-    image: "/images/cireng-bakso.png",
-    imageAlt: "Cireng isi bakso sapi pedas dengan isian bakso kenyal",
-  },
-  {
-    id: "cireng-abon",
-    name: "Cireng Isi Abon Sapi",
-    category: "Cireng Isi",
-    tag: "Favorit",
-    tagTone: "orange",
-    description:
-      "Abon sapi lembut dan manis-gurih melimpah. Pilihan aman untuk anak-anak dan keluarga.",
-    highlight: "Abon sapi melimpah & gurih",
-    price: 23000,
-    unit: "pack",
-    isi: "isi 8 pcs",
-    image: "/images/cireng-abon.png",
-    imageAlt: "Cireng isi abon sapi dengan serat abon lembut melimpah",
-  },
-  {
-    id: "dimsum-ayam",
-    name: "Dimsum Ayam Premium",
-    category: "Dimsum",
-    tag: "Best Seller",
-    tagTone: "amber",
-    description:
-      "Dimsum ayam udang dengan tekstur lembut, dikukus sempurna dan siap kukus ulang di rumah.",
-    highlight: "Ayam & udang premium",
-    price: 25000,
-    unit: "pack",
-    isi: "isi 6 pcs",
-    image: "/images/dimsum-ayam.png",
-    imageAlt: "Dimsum ayam premium dalam kukusan bambu, siap kukus",
-  },
-  {
-    id: "dimsum-mentai",
-    name: "Dimsum Mentai Lumer",
-    category: "Dimsum",
-    tag: "Favorit",
-    tagTone: "orange",
-    description:
-      "Dimsum ayam disiram saus mentai creamy yang gurih, dipanggang hingga wangi. Favorit kekinian!",
-    highlight: "Saus mentai creamy dipanggang",
-    price: 30000,
-    unit: "pack",
-    isi: "isi 6 pcs",
-    image: "/images/dimsum-mentai.png",
-    imageAlt: "Dimsum mentai dengan saus creamy oranye dan tobiko",
-  },
-  {
-    id: "dimsum-mozzarella",
-    name: "Dimsum Mozzarella Cheese",
-    category: "Dimsum",
-    tag: "Favorit",
-    tagTone: "orange",
-    description:
-      "Dimsum dengan topping keju mozzarella meleleh. Kombinasi lembut, gurih, dan menyenangkan.",
-    highlight: "Topping mozzarella meleleh",
-    price: 30000,
-    unit: "pack",
-    isi: "isi 6 pcs",
-    image: "/images/dimsum-mozzarella.png",
-    imageAlt: "Dimsum mozzarella dengan topping keju meleleh",
-  },
-  {
-    id: "dimsum-goreng",
-    name: "Dimsum Goreng Crispy",
-    category: "Dimsum",
-    tag: "Favorit",
-    tagTone: "orange",
-    description:
-      "Dimsum yang digoreng hingga keemasan dan ekstra krispi. Cocok untuk camilan sore atau lauk praktis.",
-    highlight: "Ekstra krispi & wangi",
-    price: 25000,
-    unit: "pack",
-    isi: "isi 6 pcs",
-    image: "/images/dimsum-goreng.png",
-    imageAlt: "Dimsum goreng crispy berwarna keemasan",
+      "2 pack cireng isi (5 pcs/pack) plus ekstra bumbu rujak. Paling pas untuk dinikmati bersama keluarga.",
+    highlight: "2 pack cireng + ekstra bumbu",
+    price: 35000,
+    compareAt: 40000,
+    unit: "paket",
+    isi: "2 pack (10 pcs) + bumbu",
+    image: "/umkm/img/cireng-combo.jpg",
+    imageAlt:
+      "Paket combo hemat dua pack cireng isi dengan ekstra bumbu rujak",
   },
 ];
 
@@ -169,51 +90,29 @@ export type PackOption = {
 
 export const packOptions: PackOption[] = [
   {
+    id: "cireng-original",
+    name: "Cireng Original Bumbu Rujak",
+    detail: "1 pack (isi 5 pcs)",
+    price: 15000,
+  },
+  {
     id: "cireng-ayam",
     name: "Cireng Isi Ayam Suwir Pedas",
-    detail: "1 pack (isi 8 pcs)",
+    detail: "1 pack (isi 5 pcs)",
     price: 20000,
   },
   {
-    id: "cireng-mozzarella",
-    name: "Cireng Isi Mozzarella Melt",
-    detail: "1 pack (isi 8 pcs)",
+    id: "cireng-mozarella",
+    name: "Cireng Mozzarella Melt",
+    detail: "1 pack (isi 5 pcs)",
     price: 25000,
   },
   {
-    id: "dimsum-ayam",
-    name: "Dimsum Ayam Premium",
-    detail: "1 pack (isi 6 pcs)",
-    price: 25000,
-  },
-  {
-    id: "dimsum-mentai",
-    name: "Dimsum Mentai Lumer",
-    detail: "1 pack (isi 6 pcs)",
-    price: 30000,
-  },
-  {
-    id: "mix-cireng",
-    name: "Paket Mix Cireng Isi (5 Varian)",
-    detail: "Ayam, Mozzarella, Sosis, Bakso & Abon",
-    price: 99000,
-    compareAt: 112000,
+    id: "cireng-combo",
+    name: "Paket Combo Hemat",
+    detail: "2 pack cireng isi (10 pcs) + ekstra bumbu rujak",
+    price: 35000,
+    compareAt: 40000,
     badge: "Hemat",
-  },
-  {
-    id: "mix-dimsum",
-    name: "Paket Mix Dimsum (4 Varian)",
-    detail: "Ayam, Mentai, Mozzarella & Goreng Crispy",
-    price: 95000,
-    compareAt: 110000,
-    badge: "Hemat",
-  },
-  {
-    id: "kombo",
-    name: "Paket Kombo Cireng + Dimsum",
-    detail: "Mix cireng isi & dimsum, paling puas",
-    price: 175000,
-    compareAt: 222000,
-    badge: "Best Value",
   },
 ];

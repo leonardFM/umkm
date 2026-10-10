@@ -22,8 +22,8 @@ const testimonials: Testimonial[] = [
     location: "Bandung",
     rating: 5,
     quote:
-      "Saus mentainya creamy dan gurih banget, dimsumnya lembut. Stok frozen di rumah tinggal kukus sebentar, rasanya kayak baru dibuat.",
-    product: "Dimsum Mentai Lumer",
+      "Paket combo-nya worth it banget, dua pack plus ekstra bumbu rujak. Cirengnya krispi, bumbunya legit dan segar. Stok frozen di rumah tinggal goreng sebentar.",
+    product: "Paket Combo Hemat",
   },
   {
     name: "Mega Larasati",
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     rating: 5,
     quote:
       "Mozzarella-nya melar sempurna, anak-anak suka! Dikemas rapi, sampai rumah masih beku. Recommended banget.",
-    product: "Cireng Isi Mozzarella Melt",
+    product: "Cireng Mozzarella Melt",
   },
 ];
 
@@ -53,18 +53,12 @@ export default function Testimonials() {
             Testimoni Pelanggan
           </span>
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-cream sm:text-4xl">
-            Ribuan Pecinta Cireng Sudah Membuktikan
+            Kata Mereka yang Sudah Coba
           </h2>
-          <div className="mt-5 inline-flex items-center gap-3 rounded-full bg-cream/10 px-5 py-2.5">
-            <div className="flex text-amber-400" aria-hidden="true">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <StarIcon key={i} className="h-5 w-5" />
-              ))}
-            </div>
-            <span className="text-sm font-bold text-cream">
-              4.9 dari 1.200+ ulasan
-            </span>
-          </div>
+          <p className="mt-4 text-base leading-relaxed text-cream/75">
+            Pengalaman nyata pelanggan Cireng Abidzar setelah mencicipi cireng
+            rujak krispi kami.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">

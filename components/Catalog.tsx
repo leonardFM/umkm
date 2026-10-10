@@ -1,13 +1,5 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import Image from "next/image";
-import {
-  products,
-  categories,
-  type ProductCategory,
-  type ProductTag,
-} from "@/lib/products";
+import { products, type ProductTag } from "@/lib/products";
 import { formatRupiah, orderMessage, waLink } from "@/lib/whatsapp";
 import { WhatsAppIcon } from "./icons";
 
@@ -15,22 +7,10 @@ const tagStyles: Record<ProductTag, string> = {
   "Best Seller": "bg-amber-400 text-ink",
   Pedas: "bg-chili text-cream",
   Favorit: "bg-brand text-cream",
+  Hemat: "bg-emerald-500 text-cream",
 };
 
-type Filter = "Semua" | ProductCategory;
-const filters: Filter[] = ["Semua", ...categories];
-
 export default function Catalog() {
-  const [active, setActive] = useState<Filter>("Semua");
-
-  const visible = useMemo(
-    () =>
-      active === "Semua"
-        ? products
-        : products.filter((p) => p.category === active),
-    [active],
-  );
-
   return (
     <section id="katalog" className="bg-cream-200/50 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -39,43 +19,17 @@ export default function Catalog() {
             Katalog Produk
           </span>
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-            Aneka Cireng Isi & Dimsum
+            Cireng Rujak Krispi
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-soft/85">
-            Semua varian tersedia dalam kemasan frozen siap goreng atau kukus.
+            Semua varian tersedia per pack isi 5 pcs, dibuat fresh dan higienis.
             Klik &ldquo;Beli via WA&rdquo; untuk langsung checkout lewat
             WhatsApp.
           </p>
         </div>
 
-        <div
-          className="mt-8 flex flex-wrap justify-center gap-2"
-          role="tablist"
-          aria-label="Filter kategori produk"
-        >
-          {filters.map((filter) => {
-            const isActive = filter === active;
-            return (
-              <button
-                key={filter}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => setActive(filter)}
-                className={`rounded-full px-5 py-2 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-cream ${
-                  isActive
-                    ? "bg-brand text-cream shadow-md shadow-brand/25"
-                    : "border border-brand/20 bg-cream text-ink-soft hover:border-brand/50 hover:text-brand-700"
-                }`}
-              >
-                {filter}
-              </button>
-            );
-          })}
-        </div>
-
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((product) => (
+          {products.map((product) => (
             <article
               key={product.id}
               className="group flex flex-col overflow-hidden rounded-3xl border border-brand/10 bg-cream shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/15"
@@ -94,9 +48,6 @@ export default function Catalog() {
                   }`}
                 >
                   {product.tag}
-                </span>
-                <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-bold text-cream shadow-md backdrop-blur">
-                  {product.category}
                 </span>
                 <span className="absolute bottom-4 right-4 rounded-full bg-cream/95 px-3 py-1 text-xs font-bold text-brand-700 shadow-md backdrop-blur">
                   {product.isi}
@@ -125,6 +76,11 @@ export default function Catalog() {
                     <span className="ml-1 text-xs font-medium text-ink-soft/70">
                       /{product.unit}
                     </span>
+                    {product.compareAt && (
+                      <span className="ml-2 text-xs font-medium text-ink-soft/50 line-through">
+                        {formatRupiah(product.compareAt)}
+                      </span>
+                    )}
                   </div>
                 </div>
 

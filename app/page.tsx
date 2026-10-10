@@ -10,7 +10,7 @@ import { faqs } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Jual Cireng Isi & Dimsum Frozen Enak, Krispi & Halal",
+  title: "Jual Cireng Rujak Krispi Enak — Original, Ayam Pedas & Mozzarella",
 };
 
 const abs = (path: string) =>
@@ -37,10 +37,10 @@ export default function Home() {
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    image: abs("/images/hero-cireng.png"),
-    logo: abs("/images/logo.svg"),
+    image: abs("/umkm/img/hero-cireng.jpg"),
+    logo: abs("/umkm/img/logo.svg"),
     telephone: `+${siteConfig.whatsapp}`,
-    priceRange: "Rp20.000 - Rp175.000",
+    priceRange: "Rp15.000 - Rp35.000",
     servesCuisine: "Indonesian Snack",
     currenciesAccepted: "IDR",
     paymentAccepted: "Transfer Bank, E-Wallet, QRIS, COD",
@@ -54,19 +54,12 @@ export default function Home() {
       addressCountry: siteConfig.address.country,
     },
     sameAs: [siteConfig.instagram, siteConfig.tiktok],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "1200",
-      bestRating: "5",
-      worstRating: "1",
-    },
   };
 
   const productListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Katalog Cireng Isi & Dimsum Cireng Abidzar",
+    name: "Katalog Cireng Rujak Krispi Cireng Abidzar",
     itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -76,7 +69,7 @@ export default function Home() {
         image: abs(product.image),
         description: product.description,
         brand: { "@type": "Brand", name: siteConfig.name },
-        category: "Camilan Frozen Indonesia",
+        category: "Camilan Indonesia",
         offers: {
           "@type": "Offer",
           url: `${siteConfig.url}/#katalog`,
@@ -84,13 +77,6 @@ export default function Home() {
           price: product.price,
           availability: "https://schema.org/InStock",
           seller: { "@id": storeId },
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "320",
-          bestRating: "5",
-          worstRating: "1",
         },
       },
     })),

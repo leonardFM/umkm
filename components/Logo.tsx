@@ -75,7 +75,7 @@ export default function Logo({
               tone === "light" ? "text-cream-300" : "text-ink-soft/70"
             }`}
           >
-            Cireng Isi • Dimsum
+            Cireng Rujak • Krispi
           </span>
         </span>
       )}
