@@ -10,7 +10,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { waLink } from "@/lib/whatsapp";
 
 const footerMessage =
-  "Halo admin, saya mau pesan Cireng Rujak Krispi (Pack isi 5). Mohon info varian, total, dan ongkirnya.";
+  "Halo admin, saya mau pesan Cireng Rujak Krispi / Dimsum. Mohon info varian, total, dan ongkirnya.";
 
 async function getCopyrightYear(): Promise<number> {
   "use cache";

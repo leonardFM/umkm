@@ -1,8 +1,10 @@
 export type ProductTag = "Best Seller" | "Pedas" | "Favorit" | "Hemat";
+export type ProductCategory = "Cireng" | "Dimsum";
 
 export type Product = {
   id: string;
   name: string;
+  category: ProductCategory;
   tag: ProductTag;
   tagTone: "amber" | "red" | "orange" | "emerald";
   description: string;
@@ -15,10 +17,13 @@ export type Product = {
   imageAlt: string;
 };
 
+export const categories: ProductCategory[] = ["Cireng", "Dimsum"];
+
 export const products: Product[] = [
   {
     id: "cireng-original",
     name: "Cireng Original Bumbu Rujak",
+    category: "Cireng",
     tag: "Best Seller",
     tagTone: "amber",
     description:
@@ -34,6 +39,7 @@ export const products: Product[] = [
   {
     id: "cireng-ayam",
     name: "Cireng Isi Ayam Suwir Pedas",
+    category: "Cireng",
     tag: "Pedas",
     tagTone: "red",
     description:
@@ -49,6 +55,7 @@ export const products: Product[] = [
   {
     id: "cireng-mozarella",
     name: "Cireng Mozzarella Melt",
+    category: "Cireng",
     tag: "Favorit",
     tagTone: "orange",
     description:
@@ -64,6 +71,7 @@ export const products: Product[] = [
   {
     id: "cireng-combo",
     name: "Paket Combo Hemat",
+    category: "Cireng",
     tag: "Hemat",
     tagTone: "emerald",
     description:
@@ -72,47 +80,91 @@ export const products: Product[] = [
     price: 35000,
     compareAt: 40000,
     unit: "paket",
-    isi: "2 pack (10 pcs) + bumbu",
+    isi: "2 pack + bumbu",
     image: "/umkm/img/cireng-combo.jpg",
     imageAlt:
       "Paket combo hemat dua pack cireng isi dengan ekstra bumbu rujak",
+  },
+  {
+    id: "dimsum-ayam",
+    name: "Dimsum Ayam Premium",
+    category: "Dimsum",
+    tag: "Best Seller",
+    tagTone: "amber",
+    description:
+      "Dimsum ayam udang dengan tekstur lembut, dikukus sempurna dan siap kukus ulang di rumah.",
+    highlight: "Ayam & udang premium",
+    price: 25000,
+    unit: "pack",
+    isi: "isi 6 pcs",
+    image: "/umkm/img/dimsum-ayam.jpg",
+    imageAlt: "Dimsum ayam premium dalam kukusan bambu, siap kukus",
+  },
+  {
+    id: "dimsum-mentai",
+    name: "Dimsum Mentai Lumer",
+    category: "Dimsum",
+    tag: "Favorit",
+    tagTone: "orange",
+    description:
+      "Dimsum ayam disiram saus mentai creamy yang gurih, dipanggang hingga wangi. Favorit kekinian!",
+    highlight: "Saus mentai creamy dipanggang",
+    price: 30000,
+    unit: "pack",
+    isi: "isi 6 pcs",
+    image: "/umkm/img/dimsum-mentai.jpg",
+    imageAlt: "Dimsum mentai dengan saus creamy oranye dan tobiko",
+  },
+  {
+    id: "dimsum-mozarella",
+    name: "Dimsum Mozzarella Cheese",
+    category: "Dimsum",
+    tag: "Favorit",
+    tagTone: "orange",
+    description:
+      "Dimsum dengan topping keju mozzarella meleleh. Kombinasi lembut, gurih, dan menyenangkan.",
+    highlight: "Topping mozzarella meleleh",
+    price: 30000,
+    unit: "pack",
+    isi: "isi 6 pcs",
+    image: "/umkm/img/dimsum-mozarella.jpg",
+    imageAlt: "Dimsum mozzarella dengan topping keju meleleh",
+  },
+  {
+    id: "dimsum-goreng",
+    name: "Dimsum Goreng Crispy",
+    category: "Dimsum",
+    tag: "Favorit",
+    tagTone: "orange",
+    description:
+      "Dimsum yang digoreng hingga keemasan dan ekstra krispi. Cocok untuk camilan sore atau lauk praktis.",
+    highlight: "Ekstra krispi & wangi",
+    price: 25000,
+    unit: "pack",
+    isi: "isi 6 pcs",
+    image: "/umkm/img/dimsum-goreng.jpg",
+    imageAlt: "Dimsum goreng crispy berwarna keemasan",
   },
 ];
 
 export type PackOption = {
   id: string;
   name: string;
+  category: ProductCategory;
   detail: string;
+  isi: string;
   price: number;
   compareAt?: number;
   badge?: string;
 };
 
-export const packOptions: PackOption[] = [
-  {
-    id: "cireng-original",
-    name: "Cireng Original Bumbu Rujak",
-    detail: "1 pack (isi 5 pcs)",
-    price: 15000,
-  },
-  {
-    id: "cireng-ayam",
-    name: "Cireng Isi Ayam Suwir Pedas",
-    detail: "1 pack (isi 5 pcs)",
-    price: 20000,
-  },
-  {
-    id: "cireng-mozarella",
-    name: "Cireng Mozzarella Melt",
-    detail: "1 pack (isi 5 pcs)",
-    price: 25000,
-  },
-  {
-    id: "cireng-combo",
-    name: "Paket Combo Hemat",
-    detail: "2 pack cireng isi (10 pcs) + ekstra bumbu rujak",
-    price: 35000,
-    compareAt: 40000,
-    badge: "Hemat",
-  },
-];
+export const packOptions: PackOption[] = products.map((product) => ({
+  id: product.id,
+  name: product.name,
+  category: product.category,
+  detail: `1 ${product.unit} (${product.isi})`,
+  isi: product.isi,
+  price: product.price,
+  compareAt: product.compareAt,
+  badge: product.tag === "Hemat" ? "Hemat" : undefined,
+}));

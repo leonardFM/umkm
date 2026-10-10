@@ -10,7 +10,7 @@ import { faqs } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Jual Cireng Rujak Krispi Enak — Original, Ayam Pedas & Mozzarella",
+  title: "Jual Cireng Rujak Krispi & Dimsum Enak — Original, Ayam Pedas & Mozzarella",
 };
 
 const abs = (path: string) =>
@@ -59,7 +59,7 @@ export default function Home() {
   const productListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Katalog Cireng Rujak Krispi Cireng Abidzar",
+    name: "Katalog Cireng Rujak Krispi & Dimsum Cireng Abidzar",
     itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,

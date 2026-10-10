@@ -3,7 +3,7 @@ import { SparkleIcon, WhatsAppIcon } from "./icons";
 import { waLink } from "@/lib/whatsapp";
 
 const heroMessage =
-  "Halo admin, saya mau pesan Cireng Rujak Krispi (Pack isi 5). Mohon info varian, total, dan ongkirnya.";
+  "Halo admin, saya mau pesan Cireng Rujak Krispi / Dimsum. Mohon info varian, total, dan ongkirnya.";
 
 export default function Hero() {
   return (
@@ -24,20 +24,21 @@ export default function Hero() {
         <div className="relative z-10 text-center lg:text-left">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-cream px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 shadow-sm">
             <SparkleIcon className="h-3.5 w-3.5 text-chili" />
-            Cireng Rujak Krispi • Fresh & Higienis
+            Cireng &amp; Dimsum • Fresh &amp; Higienis
           </span>
 
           <h1 className="mt-5 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-            Cireng Rujak Krispi{" "}
+            Cireng Rujak &amp; Dimsum{" "}
             <span className="bg-gradient-to-r from-brand to-chili bg-clip-text text-transparent">
-              Bikin Nagih
+              Krispi Bikin Nagih
             </span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-ink-soft/90 sm:text-lg lg:mx-0">
-            Cireng rujak dengan bumbu gula aren yang legit dan segar. Pilih
-            original, isi ayam suwir pedas, atau mozzarella melty. Krispi di
-            luar, kenyal di dalam, dibuat fresh setiap hari.
+            Cireng rujak dengan bumbu gula aren yang legit dan segar, plus
+            dimsum premium yang lembut. Pilih cireng original, ayam suwir
+            pedas, mozzarella melty, sampai dimsum mentai. Krispi di luar,
+            kenyal di dalam, dibuat fresh setiap hari.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
@@ -61,11 +62,11 @@ export default function Hero() {
           <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-ink-soft/80 lg:justify-start">
             <li className="inline-flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
-              Per pack isi 5 pcs
+              Cireng isi 5 pcs / pack
             </li>
             <li className="inline-flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-brand" />
-              Bumbu rujak resep rahasia
+              Dimsum isi 6 pcs / pack
             </li>
             <li className="inline-flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-chili" />

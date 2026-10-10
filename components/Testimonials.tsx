@@ -22,8 +22,8 @@ const testimonials: Testimonial[] = [
     location: "Bandung",
     rating: 5,
     quote:
-      "Paket combo-nya worth it banget, dua pack plus ekstra bumbu rujak. Cirengnya krispi, bumbunya legit dan segar. Stok frozen di rumah tinggal goreng sebentar.",
-    product: "Paket Combo Hemat",
+      "Saus mentainya creamy dan gurih banget, dimsumnya lembut. Stok frozen di rumah tinggal kukus sebentar, rasanya kayak baru dibuat.",
+    product: "Dimsum Mentai Lumer",
   },
   {
     name: "Mega Larasati",

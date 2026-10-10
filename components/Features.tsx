@@ -30,16 +30,16 @@ const features: Feature[] = [
   },
   {
     icon: CrispyIcon,
-    title: "Ekstra Krispi & Tahan Lama",
+    title: "Cireng Krispi, Dimsum Lembut",
     description:
-      "Teknik penggorengan khusus membuat cireng renyah lebih lama, bahkan tetap enak saat sudah dingin.",
+      "Cireng renyah di luar dan kenyal di dalam, sementara dimsum kami lembut dan gurih. Tersedia banyak varian favorit.",
     tone: "from-amber-500 to-brand",
   },
   {
     icon: SnowflakeIcon,
     title: "Fresh, Siap Saji, atau Frozen",
     description:
-      "Pilih dikirim hangat siap santap atau frozen yang tahan hingga 1 bulan di freezer rumahmu.",
+      "Pilih cireng atau dimsum, dikirim hangat siap santap atau frozen yang tahan hingga 1 bulan di freezer rumahmu.",
     tone: "from-sky-500 to-cyan-600",
   },
 ];
