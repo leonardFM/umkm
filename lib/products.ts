@@ -345,7 +345,7 @@ export const products: Product[] = [
     badge: "Hemat & Komplit",
     includes: "Komplit untuk Acara",
     description:
-      "Paket komplit hemat untuk pesta, arisan komplek, mabar, atau acara keluarga besar.",
+      "Paket komplit hemat untuk pesta, arisan, mabar, atau acara keluarga besar.",
     highlight: "Paling hemat untuk acara ramai",
     price: 160000,
     compareAt: 170000,

@@ -9,10 +9,10 @@ export const siteConfig = {
   whatsapp: "62895613163308",
   whatsappDisplay: "+62 895-6131-63308",
   address: {
-    street: "Jl. Rujak Gurih No. 12, Sukajadi",
-    city: "Bandung",
-    region: "Jawa Barat",
-    postalCode: "40162",
+    street: "Jl. Rujak Gurih No. 12, Kebayoran Baru",
+    city: "Jakarta Selatan",
+    region: "DKI Jakarta",
+    postalCode: "12110",
     country: "ID",
   },
   hours: "Setiap hari, 08.00 - 21.00 WIB",
@@ -24,7 +24,6 @@ export const siteConfig = {
 export const navLinks = [
   { label: "Beranda", href: "#beranda" },
   { label: "Katalog", href: "#katalog" },
-  { label: "Keunggulan", href: "#keunggulan" },
   { label: "Pesan", href: "#pesan" },
   { label: "FAQ", href: "#faq" },
 ] as const;

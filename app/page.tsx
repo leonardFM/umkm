@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
 import Catalog from "@/components/Catalog";
 import OrderCalculator from "@/components/OrderCalculator";
 import Faq from "@/components/Faq";
@@ -102,7 +101,6 @@ export default function Home() {
 
       <Hero />
       <Catalog />
-      <Features />
       <OrderCalculator />
       <Faq />
     </main>

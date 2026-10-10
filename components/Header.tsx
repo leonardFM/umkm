@@ -45,7 +45,7 @@ export default function Header() {
       >
         <span>
           🔥 Slot PO Fresh Sore Ini Terbatas! Pengiriman Serentak Jam 16.00 WIB
-          (Free Ongkir Komplek)
+          (Jabodetabek)
         </span>
       </a>
 

@@ -28,7 +28,7 @@ export default function Faq() {
           .
         </p>
         <p className="mt-2 text-xs text-ink-soft/70">
-          Pengiriman serentak jam 16.00 WIB dengan free ongkir area komplek.
+          Pengiriman serentak jam 16.00 WIB untuk seluruh area Jabodetabek.
         </p>
       </div>
 

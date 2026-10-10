@@ -7,7 +7,7 @@ export const faqs: Faq[] = [
   {
     question: "Bagaimana cara dan berapa lama pengirimannya?",
     answer:
-      "Kami mengirim setiap hari dari Bandung menggunakan kurir instan (area Bandung) dan ekspedisi untuk luar kota. Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama. Estimasi tiba 1-3 hari kerja untuk luar kota, dan cireng dikemas dengan es gel agar tetap beku.",
+      "Kami melayani pengiriman ke seluruh area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi) setiap hari. Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama. Cireng dan dimsum dikemas dengan es gel agar tetap beku selama pengiriman, dengan estimasi tiba 1-2 hari kerja.",
   },
   {
     question: "Apakah ada garansi jika produk rusak atau basi?",
@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
   {
     question: "Metode pembayaran apa saja yang tersedia?",
     answer:
-      "Kami menerima transfer bank, e-wallet (GoPay, OVO, DANA, ShopeePay), dan QRIS. Untuk pesanan COD area Bandung juga tersedia. Konfirmasi pembayaran langsung melalui WhatsApp admin.",
+      "Kami menerima transfer bank, e-wallet (GoPay, OVO, DANA, ShopeePay), dan QRIS. Untuk pesanan COD area Jabodetabek juga tersedia. Konfirmasi pembayaran langsung melalui WhatsApp admin.",
   },
   {
     question: "Produk dikirim dalam kondisi frozen atau siap santap?",
