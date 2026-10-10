@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import {
+  CheckIcon,
   ClockIcon,
   InstagramIcon,
   MapPinIcon,
@@ -123,7 +124,22 @@ export default async function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-xs text-cream/60 sm:flex-row">
+        <div className="mt-12 flex items-start gap-3 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 px-5 py-4">
+          <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300">
+            <CheckIcon className="h-5 w-5" />
+          </span>
+          <div>
+            <p className="font-display text-sm font-bold text-cream">
+              Garansi Ganti Baru
+            </p>
+            <p className="mt-0.5 text-xs leading-relaxed text-cream/75">
+              Garansi ganti baru jika produk rusak/basi akibat keterlambatan
+              ekspedisi. (S&amp;K Berlaku)
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-xs text-cream/60 sm:flex-row">
           <p>
             &copy; {year} {siteConfig.legalName}. Seluruh hak cipta dilindungi.
           </p>

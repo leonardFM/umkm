@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SparkleIcon, WhatsAppIcon } from "./icons";
+import { CheckIcon, SparkleIcon, WhatsAppIcon } from "./icons";
 import { waLink } from "@/lib/whatsapp";
 
 const heroMessage =
@@ -46,18 +46,23 @@ export default function Hero() {
               href={waLink(heroMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-chili px-7 py-3.5 text-base font-bold text-cream shadow-lg shadow-chili/30 transition-transform hover:-translate-y-0.5 hover:bg-chili-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-chili focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:w-auto"
+              className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-full bg-wa px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-wa/40 ring-1 ring-white/40 transition-all hover:-translate-y-0.5 hover:bg-wa-600 hover:shadow-xl hover:shadow-wa/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-wa-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:w-auto"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Pesan Sekarang
+              Pesan via WhatsApp
             </a>
             <a
               href="#katalog"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand bg-transparent px-7 py-3.5 text-base font-bold text-brand-700 transition-colors hover:bg-brand hover:text-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:w-auto"
+              className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-full border-2 border-brand bg-transparent px-7 py-3.5 text-base font-bold text-brand-700 transition-colors hover:bg-brand hover:text-cream focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-cream sm:w-auto"
             >
               Lihat Menu
             </a>
           </div>
+
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-800">
+            <CheckIcon className="h-4 w-4 text-emerald-600" />
+            Kemasan Vakum Higienis • Tahan di Ekspedisi
+          </p>
 
           <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-ink-soft/80 lg:justify-start">
             <li className="inline-flex items-center gap-2">

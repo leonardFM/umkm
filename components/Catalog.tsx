@@ -9,7 +9,7 @@ import {
   type ProductTag,
 } from "@/lib/products";
 import { formatRupiah, multiOrderMessage, waLink } from "@/lib/whatsapp";
-import { WhatsAppIcon } from "./icons";
+import { CheckIcon, WhatsAppIcon } from "./icons";
 
 const tagStyles: Record<ProductTag, string> = {
   "Best Seller": "bg-amber-400 text-ink",
@@ -98,7 +98,7 @@ export default function Catalog() {
                     tagStyles[product.tag]
                   }`}
                 >
-                  {product.tag}
+                  {product.badge}
                 </span>
                 <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-bold text-cream shadow-md backdrop-blur">
                   {categoryLabel[product.category]}
@@ -114,6 +114,12 @@ export default function Catalog() {
                 </h3>
                 <p className="mt-1.5 text-xs font-semibold text-brand">
                   {product.highlight}
+                </p>
+                <p className="mt-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[0.7rem] font-semibold text-emerald-800 ring-1 ring-emerald-500/20">
+                    <CheckIcon className="h-3.5 w-3.5 text-emerald-600" />
+                    {product.includes}
+                  </span>
                 </p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft/85">
                   {product.description}
@@ -146,7 +152,7 @@ export default function Catalog() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-chili px-5 py-3 text-sm font-bold text-cream shadow-md shadow-chili/25 transition-colors hover:bg-chili-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-chili focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+                  className="mt-4 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-wa px-5 py-3.5 text-sm font-bold text-white shadow-md shadow-wa/30 transition-colors hover:bg-wa-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-wa-700 focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   Beli via WA

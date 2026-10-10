@@ -35,6 +35,21 @@ export default function Header() {
           : "border-transparent bg-cream/70 backdrop-blur-sm"
       }`}
     >
+      <a
+        href={waLink(
+          "Halo admin, saya mau pesan Cireng Rujak Krispi / Dimsum. Masih ada slot produksi fresh hari ini?",
+        )}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center justify-center gap-2 bg-gradient-to-r from-chili via-brand to-chili px-4 py-2 text-center text-[0.72rem] font-bold leading-snug text-cream transition-colors hover:from-chili-700 hover:to-chili-700 sm:text-xs"
+      >
+        <span className="flex h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-cream" />
+        <span>
+          🔥 Slot Produksi Fresh Hari Ini Terbatas — Pesan Sekarang Sebelum
+          Kehabisan!
+        </span>
+      </a>
+
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:h-18 sm:px-6 lg:px-8">
         <a href="#beranda" className="rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand">
           <Logo />

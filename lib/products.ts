@@ -7,6 +7,8 @@ export type Product = {
   category: ProductCategory;
   tag: ProductTag;
   tagTone: "amber" | "red" | "orange" | "emerald";
+  badge: string;
+  includes: string;
   description: string;
   highlight: string;
   price: number;
@@ -26,6 +28,8 @@ export const products: Product[] = [
     category: "Cireng",
     tag: "Best Seller",
     tagTone: "amber",
+    badge: "Best Seller",
+    includes: "Termasuk Bumbu Rujak",
     description:
       "Cireng rujak krispi dengan bumbu rujak gula aren yang legit, pedas, dan segar. Renyah di luar, kenyal di dalam.",
     highlight: "Bumbu rujak resep rahasia",
@@ -42,6 +46,8 @@ export const products: Product[] = [
     category: "Cireng",
     tag: "Pedas",
     tagTone: "red",
+    badge: "Pedas Nampol",
+    includes: "Termasuk Bumbu Rujak",
     description:
       "Isian ayam suwir berbumbu cabai yang melimpah, pedas nampol dengan aroma bawang yang menggoda.",
     highlight: "Isian ayam melimpah & pedas",
@@ -58,6 +64,8 @@ export const products: Product[] = [
     category: "Cireng",
     tag: "Favorit",
     tagTone: "orange",
+    badge: "Favorit Anak",
+    includes: "Termasuk Bumbu Rujak",
     description:
       "Keju mozzarella premium yang meleleh kenyal saat digigit. Camilan favorit yang bikin nagih!",
     highlight: "Mozzarella premium meleleh",
@@ -74,6 +82,8 @@ export const products: Product[] = [
     category: "Cireng",
     tag: "Hemat",
     tagTone: "emerald",
+    badge: "Paling Hemat",
+    includes: "Termasuk Bumbu Rujak",
     description:
       "2 pack cireng isi (5 pcs/pack) plus ekstra bumbu rujak. Paling pas untuk dinikmati bersama keluarga.",
     highlight: "2 pack cireng + ekstra bumbu",
@@ -91,6 +101,8 @@ export const products: Product[] = [
     category: "Dimsum",
     tag: "Best Seller",
     tagTone: "amber",
+    badge: "Best Seller",
+    includes: "Termasuk Chili Oil",
     description:
       "Dimsum ayam udang dengan tekstur lembut, dikukus sempurna dan siap kukus ulang di rumah.",
     highlight: "Ayam & udang premium",
@@ -106,6 +118,8 @@ export const products: Product[] = [
     category: "Dimsum",
     tag: "Favorit",
     tagTone: "orange",
+    badge: "Favorit Kekinian",
+    includes: "Termasuk Chili Oil",
     description:
       "Dimsum ayam disiram saus mentai creamy yang gurih, dipanggang hingga wangi. Favorit kekinian!",
     highlight: "Saus mentai creamy dipanggang",
@@ -121,6 +135,8 @@ export const products: Product[] = [
     category: "Dimsum",
     tag: "Favorit",
     tagTone: "orange",
+    badge: "Favorit Anak",
+    includes: "Termasuk Chili Oil",
     description:
       "Dimsum dengan topping keju mozzarella meleleh. Kombinasi lembut, gurih, dan menyenangkan.",
     highlight: "Topping mozzarella meleleh",
@@ -136,6 +152,8 @@ export const products: Product[] = [
     category: "Dimsum",
     tag: "Favorit",
     tagTone: "orange",
+    badge: "Camilan Sore",
+    includes: "Termasuk Chili Oil",
     description:
       "Dimsum yang digoreng hingga keemasan dan ekstra krispi. Cocok untuk camilan sore atau lauk praktis.",
     highlight: "Ekstra krispi & wangi",
@@ -153,9 +171,11 @@ export type PackOption = {
   category: ProductCategory;
   detail: string;
   isi: string;
+  includes: string;
+  badge: string;
+  image: string;
   price: number;
   compareAt?: number;
-  badge?: string;
 };
 
 export const packOptions: PackOption[] = products.map((product) => ({
@@ -164,7 +184,31 @@ export const packOptions: PackOption[] = products.map((product) => ({
   category: product.category,
   detail: `1 ${product.unit} (${product.isi})`,
   isi: product.isi,
+  includes: product.includes,
+  badge: product.badge,
+  image: product.image,
   price: product.price,
   compareAt: product.compareAt,
-  badge: product.tag === "Hemat" ? "Hemat" : undefined,
 }));
+
+export type AddOn = {
+  id: string;
+  name: string;
+  detail: string;
+  price: number;
+};
+
+export const addOns: AddOn[] = [
+  {
+    id: "extra-bumbu",
+    name: "Ekstra Bumbu Rujak",
+    detail: "Saus rujak gula aren tambahan",
+    price: 5000,
+  },
+  {
+    id: "extra-chili-oil",
+    name: "Ekstra Chili Oil",
+    detail: "Chili oil pedas gurih tambahan",
+    price: 5000,
+  },
+];

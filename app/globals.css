@@ -10,6 +10,9 @@
   --color-brand-700: #c2410c;
   --color-chili: #dc2626;
   --color-chili-700: #b91c1c;
+  --color-wa: #25d366;
+  --color-wa-600: #1ebe5a;
+  --color-wa-700: #128c7e;
   --color-ink: #431407;
   --color-ink-soft: #7c2d12;
 
@@ -63,7 +66,7 @@ body {
 
 section[id],
 div[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 7.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

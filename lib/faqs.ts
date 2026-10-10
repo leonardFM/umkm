@@ -10,6 +10,11 @@ export const faqs: Faq[] = [
       "Kami mengirim setiap hari dari Bandung menggunakan kurir instan (area Bandung) dan ekspedisi untuk luar kota. Pesanan sebelum pukul 15.00 WIB dikirim di hari yang sama. Estimasi tiba 1-3 hari kerja untuk luar kota, dan cireng dikemas dengan es gel agar tetap beku.",
   },
   {
+    question: "Apakah ada garansi jika produk rusak atau basi?",
+    answer:
+      "Ada! Kami memberi garansi ganti baru jika produk rusak atau basi akibat keterlambatan ekspedisi (S&K berlaku). Cukup kirim foto atau video paket saat diterima ke admin via WhatsApp maksimal 1x24 jam setelah barang diterima untuk kami proses.",
+  },
+  {
     question: "Apakah cireng dan dimsum frozen tahan lama?",
     answer:
       "Ya! Semua cireng dan dimsum frozen kami tahan hingga 1 bulan jika disimpan di freezer pada suhu -18°C. Setelah dibuka, sebaiknya segera dimasak atau disimpan kembali dalam wadah kedap udara di freezer.",
