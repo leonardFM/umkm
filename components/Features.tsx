@@ -23,9 +23,9 @@ const features: Feature[] = [
   },
   {
     icon: DropletIcon,
-    title: "Bumbu Rujak Resep Rahasia",
+    title: "Sambal & Bumbu Resep Rahasia",
     description:
-      "Saus rujak gula aren yang legit, pedas, dan segar — resep khas yang bikin cireng makin nagih.",
+      "Cireng disajikan dengan saus rujak gula aren yang legit dan segar, dimsum dengan chili oil gurih — resep khas yang bikin makin nagih.",
     tone: "from-brand to-chili",
   },
   {
@@ -55,7 +55,7 @@ export default function Features() {
           Gurih, Pedas, dan Bikin Nagih
         </h2>
         <p className="mt-4 text-base leading-relaxed text-ink-soft/85">
-          Bukan cireng biasa. Setiap pack dibuat dengan standar rasa dan
+          Bukan camilan biasa. Setiap pack dibuat dengan standar rasa dan
           kualitas yang bikin pelanggan balik lagi.
         </p>
       </div>

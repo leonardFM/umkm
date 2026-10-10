@@ -6,20 +6,12 @@ import {
   products,
   categories,
   type ProductCategory,
-  type ProductTag,
 } from "@/lib/products";
 import { formatRupiah, multiOrderMessage, waLink } from "@/lib/whatsapp";
 import { CheckIcon, WhatsAppIcon } from "./icons";
 
-const tagStyles: Record<ProductTag, string> = {
-  "Best Seller": "bg-amber-400 text-ink",
-  Pedas: "bg-chili text-cream",
-  Favorit: "bg-brand text-cream",
-  Hemat: "bg-emerald-500 text-cream",
-};
-
 const categoryLabel: Record<ProductCategory, string> = {
-  Cireng: "Cireng Rujak",
+  Cireng: "Cireng",
   Dimsum: "Dimsum",
 };
 
@@ -45,7 +37,7 @@ export default function Catalog() {
             Katalog Produk
           </span>
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-            Cireng Rujak Krispi &amp; Dimsum
+            Katalog Produk Cireng &amp; Dimsum
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-soft/85">
             Dibuat fresh dan higienis, siap goreng atau kukus. Klik
@@ -93,16 +85,6 @@ export default function Catalog() {
                   sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 30vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <span
-                  className={`absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-extrabold uppercase tracking-wide shadow-md ${
-                    tagStyles[product.tag]
-                  }`}
-                >
-                  {product.badge}
-                </span>
-                <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-bold text-cream shadow-md backdrop-blur">
-                  {categoryLabel[product.category]}
-                </span>
                 <span className="absolute bottom-4 right-4 rounded-full bg-cream/95 px-3 py-1 text-xs font-bold text-brand-700 shadow-md backdrop-blur">
                   {product.isi}
                 </span>

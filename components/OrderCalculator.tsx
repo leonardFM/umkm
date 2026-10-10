@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { addOns, categories, packOptions } from "@/lib/products";
 import { formatRupiah, multiOrderMessage, waLink } from "@/lib/whatsapp";
-import { CheckIcon, SparkleIcon, WhatsAppIcon } from "./icons";
+import { CheckIcon, WhatsAppIcon } from "./icons";
 
 const MIN_QTY = 0;
 const MAX_QTY = 99;
@@ -151,7 +151,7 @@ export default function OrderCalculator() {
             return (
               <fieldset key={category}>
                 <legend className="text-sm font-bold uppercase tracking-wide text-ink-soft/70">
-                  {category === "Cireng" ? "Cireng Rujak Krispi" : "Dimsum"}
+                  {category === "Cireng" ? "Cireng" : "Dimsum"}
                 </legend>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {options.map((option) => {
@@ -166,13 +166,6 @@ export default function OrderCalculator() {
                             : "border-brand/15 bg-cream"
                         }`}
                       >
-                        {option.badge && (
-                          <span className="absolute -top-2.5 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-chili px-2.5 py-0.5 text-[0.65rem] font-extrabold uppercase tracking-wide text-cream shadow">
-                            <SparkleIcon className="h-3 w-3" />
-                            {option.badge}
-                          </span>
-                        )}
-
                         <div className="flex gap-3">
                           <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-cream-200">
                             <Image

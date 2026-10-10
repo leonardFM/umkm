@@ -7,7 +7,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { waLink } from "@/lib/whatsapp";
 
 const heroMessage =
-  "Halo admin, saya mau pesan Cireng Rujak Krispi / Dimsum. Mohon info varian, total, dan ongkirnya.";
+  "Halo admin, saya mau pesan Cireng & Dimsum. Mohon info varian, total, dan ongkirnya.";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function Header() {
     >
       <a
         href={waLink(
-          "Halo admin, saya mau pesan Cireng Rujak Krispi / Dimsum. Masih ada slot produksi fresh hari ini?",
+          "Halo admin, saya mau pesan Cireng & Dimsum. Masih ada slot produksi fresh hari ini?",
         )}
         target="_blank"
         rel="noopener noreferrer"

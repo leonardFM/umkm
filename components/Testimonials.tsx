@@ -56,8 +56,8 @@ export default function Testimonials() {
             Kata Mereka yang Sudah Coba
           </h2>
           <p className="mt-4 text-base leading-relaxed text-cream/75">
-            Pengalaman nyata pelanggan Cireng Abidzar setelah mencicipi cireng
-            rujak krispi kami.
+            Pengalaman nyata pelanggan Cireng Abidzar setelah mencicipi
+            cireng krispi &amp; dimsum kami.
           </p>
         </div>
 

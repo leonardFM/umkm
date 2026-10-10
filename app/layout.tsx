@@ -23,12 +23,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "Cireng Abidzar | Jual Cireng Rujak Krispi & Dimsum Enak",
+      "Cireng Abidzar | Jual Cireng & Dimsum Krispi Enak",
     template: "%s | Cireng Abidzar",
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
+    "jual cireng dan dimsum",
     "jual cireng rujak",
     "cireng rujak krispi",
     "cireng original bumbu rujak",
@@ -56,20 +57,20 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: "Cireng Abidzar | Cireng Rujak Krispi & Dimsum, Krispi di Luar Kenyal di Dalam",
+    title: "Cireng Abidzar | Cireng & Dimsum Krispi — Gurih, Lezat, Bikin Nagih",
     description: siteConfig.description,
     images: [
       {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Cireng Abidzar - cireng rujak krispi dan dimsum premium siap goreng dan kukus",
+        alt: "Cireng Abidzar - cireng krispi dan dimsum premium siap goreng dan kukus",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cireng Abidzar | Jual Cireng Rujak Krispi & Dimsum Enak",
+    title: "Cireng Abidzar | Jual Cireng & Dimsum Krispi Enak",
     description: siteConfig.description,
     images: [ogImage],
   },
