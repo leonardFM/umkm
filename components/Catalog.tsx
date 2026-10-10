@@ -4,8 +4,9 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import {
   products,
-  categories,
-  type ProductCategory,
+  productGroups,
+  groupOf,
+  type ProductGroup,
   type ProductTag,
 } from "@/lib/products";
 import { formatRupiah, orderMessage, waLink } from "@/lib/whatsapp";
@@ -18,26 +19,28 @@ const tagStyles: Record<ProductTag, string> = {
   Hemat: "bg-emerald-500 text-cream",
 };
 
-const categoryLabel: Record<ProductCategory, string> = {
-  Cireng: "Cireng",
-  Dimsum: "Dimsum",
-  Minuman: "Minuman",
-  Paket: "Paket Combo",
-};
+type Filter = "Semua" | ProductGroup;
+const filters: Filter[] = ["Semua", ...productGroups.map((group) => group.id)];
 
-type Filter = "Semua" | ProductCategory;
-const filters: Filter[] = ["Semua", ...categories];
+function groupLabel(filter: Filter): string {
+  if (filter === "Semua") return "Semua";
+  const meta = productGroups.find((group) => group.id === filter);
+  return meta ? `${meta.emoji} ${meta.label}` : filter;
+}
 
 export default function Catalog() {
   const [active, setActive] = useState<Filter>("Semua");
 
-  const visible = useMemo(
-    () =>
-      active === "Semua"
-        ? products
-        : products.filter((p) => p.category === active),
-    [active],
-  );
+  const visible = useMemo(() => {
+    if (active !== "Semua") {
+      return products.filter((p) => groupOf(p.category) === active);
+    }
+    return [...products].sort(
+      (a, b) =>
+        productGroups.findIndex((g) => g.id === groupOf(a.category)) -
+        productGroups.findIndex((g) => g.id === groupOf(b.category)),
+    );
+  }, [active]);
 
   return (
     <section id="katalog" className="bg-cream-200/50 py-16 sm:py-20">
@@ -47,11 +50,12 @@ export default function Catalog() {
             Katalog Produk
           </span>
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
-            Katalog Cireng, Dimsum &amp; Minuman
+            Katalog Cireng, Dimsum, Jajanan Pasar &amp; Minuman
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-soft/85">
-            Dibuat fresh dan higienis, siap goreng atau kukus. Klik
-            &ldquo;Beli via WA&rdquo; untuk langsung checkout lewat WhatsApp.
+            Pilih paket combo, cireng &amp; dimsum, jajanan pasar, atau susu
+            jelly favoritmu. Dibuat fresh dan higienis setiap hari &mdash; klik
+            &ldquo;Beli via WA&rdquo; untuk langsung checkout.
           </p>
         </div>
 
@@ -75,7 +79,7 @@ export default function Catalog() {
                     : "border border-brand/20 bg-cream text-ink-soft hover:border-brand/50 hover:text-brand-700"
                 }`}
               >
-                {filter === "Semua" ? "Semua" : categoryLabel[filter]}
+                {groupLabel(filter)}
               </button>
             );
           })}
@@ -85,7 +89,11 @@ export default function Catalog() {
           {visible.map((product) => (
             <article
               key={product.id}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-brand/10 bg-cream shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/15"
+              className={`group flex flex-col overflow-hidden rounded-3xl border bg-cream shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand/15 ${
+                groupOf(product.category) === "Paket"
+                  ? "border-brand/40 shadow-md shadow-brand/10 ring-2 ring-brand/20"
+                  : "border-brand/10"
+              }`}
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image

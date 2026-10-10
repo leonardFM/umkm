@@ -4,19 +4,12 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import {
   addOns,
-  categories,
   packOptions,
-  type ProductCategory,
+  productGroups,
+  groupOf,
 } from "@/lib/products";
 import { formatRupiah, multiOrderMessage, waLink } from "@/lib/whatsapp";
 import { CheckIcon, WhatsAppIcon } from "./icons";
-
-const categoryLabel: Record<ProductCategory, string> = {
-  Cireng: "Cireng",
-  Dimsum: "Dimsum",
-  Minuman: "Minuman",
-  Paket: "Paket Combo",
-};
 
 const MIN_QTY = 0;
 const MAX_QTY = 99;
@@ -157,14 +150,14 @@ export default function OrderCalculator() {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-5">
         <div className="space-y-8 lg:col-span-3">
-          {categories.map((category) => {
+          {productGroups.map((group) => {
             const options = packOptions.filter(
-              (option) => option.category === category,
+              (option) => groupOf(option.category) === group.id,
             );
             return (
-              <fieldset key={category}>
+              <fieldset key={group.id}>
                 <legend className="text-sm font-bold uppercase tracking-wide text-ink-soft/70">
-                  {categoryLabel[category]}
+                  {group.emoji} {group.label}
                 </legend>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
                   {options.map((option) => {

@@ -1,5 +1,10 @@
 export type ProductTag = "Best Seller" | "Pedas" | "Favorit" | "Hemat";
-export type ProductCategory = "Cireng" | "Dimsum" | "Minuman" | "Paket";
+export type ProductCategory =
+  | "Cireng"
+  | "Dimsum"
+  | "Jajanan Pasar"
+  | "Minuman"
+  | "Paket";
 
 export type Product = {
   id: string;
@@ -23,9 +28,41 @@ export type Product = {
 export const categories: ProductCategory[] = [
   "Cireng",
   "Dimsum",
+  "Jajanan Pasar",
   "Minuman",
   "Paket",
 ];
+
+export type ProductGroup =
+  | "Paket"
+  | "Cireng & Dimsum"
+  | "Jajanan Pasar"
+  | "Susu Jelly";
+
+export type ProductGroupMeta = {
+  id: ProductGroup;
+  label: string;
+  emoji: string;
+};
+
+export const productGroups: ProductGroupMeta[] = [
+  { id: "Paket", label: "Paket Combo", emoji: "🔥" },
+  { id: "Cireng & Dimsum", label: "Cireng & Dimsum", emoji: "🥟" },
+  { id: "Jajanan Pasar", label: "Jajanan Pasar", emoji: "🧆" },
+  { id: "Susu Jelly", label: "Susu Jelly", emoji: "🧋" },
+];
+
+const groupByCategory: Record<ProductCategory, ProductGroup> = {
+  Cireng: "Cireng & Dimsum",
+  Dimsum: "Cireng & Dimsum",
+  "Jajanan Pasar": "Jajanan Pasar",
+  Minuman: "Susu Jelly",
+  Paket: "Paket",
+};
+
+export function groupOf(category: ProductCategory): ProductGroup {
+  return groupByCategory[category];
+}
 
 export const products: Product[] = [
   {
@@ -170,15 +207,69 @@ export const products: Product[] = [
     imageAlt: "Dimsum goreng crispy berwarna keemasan",
   },
   {
+    id: "risol-mayo",
+    name: "Risol Mayo Creamy",
+    category: "Jajanan Pasar",
+    tag: "Favorit",
+    tagTone: "orange",
+    badge: "Camilan Gurih",
+    includes: "Mayones Melimpah",
+    description:
+      "Kulit risol renyah dengan isian telur, smoked beef/sosis, dan mayones melimpah yang gurih creamy.",
+    highlight: "Kulit renyah + mayones creamy",
+    price: 20000,
+    unit: "pack",
+    isi: "isi 5 pcs",
+    image: "/umkm/img/risol-mayo.jpg",
+    imageAlt:
+      "Risol mayo creamy dengan isian telur, smoked beef, dan mayones melimpah",
+  },
+  {
+    id: "tahu-bakso",
+    name: "Tahu Bakso Daging",
+    category: "Jajanan Pasar",
+    tag: "Favorit",
+    tagTone: "orange",
+    badge: "Lauk Praktis",
+    includes: "Bisa Kukus / Goreng",
+    description:
+      "Tahu gurih dengan isian adonan bakso daging yang padat, kenyal, dan gurih. Enak dikukus atau digoreng.",
+    highlight: "Isian bakso daging padat",
+    price: 20000,
+    unit: "pack",
+    isi: "isi 5 pcs",
+    image: "/umkm/img/tahu-bakso.jpg",
+    imageAlt:
+      "Tahu bakso daging dengan isian adonan bakso kenyal siap kukus atau goreng",
+  },
+  {
+    id: "pempek-dos",
+    name: "Pempek Dos Crispy",
+    category: "Jajanan Pasar",
+    tag: "Favorit",
+    tagTone: "orange",
+    badge: "Khas Nusantara",
+    includes: "Termasuk Kuah Cuko",
+    description:
+      "Pempek garing renyah di luar, kenyal di dalam disajikan lengkap dengan kuah Cuko asam-pedas-manis yang segar.",
+    highlight: "Renyah + kuah cuko segar",
+    price: 18000,
+    unit: "porsi",
+    isi: "1 porsi + cuko",
+    image: "/umkm/img/pempek-dos.jpg",
+    imageAlt:
+      "Pempek dos crispy renyah disajikan dengan kuah cuko asam pedas manis",
+  },
+  {
     id: "susu-jelly",
-    name: "Susu Jelly Creamy (Botol 250ml)",
+    name: "Susu Jelly Creamy (250ml)",
     category: "Minuman",
     tag: "Favorit",
     tagTone: "orange",
     badge: "Penawar Pedas",
     includes: "Dingin & Segar",
     description:
-      "Susu manis creamy dingin dipadukan dengan potongan jelly kenyal yang lembut. Penawar pedas paling pas!",
+      "Susu manis creamy dingin dipadukan dengan potongan jelly kenyal lembut. Penawar pedas pas!",
     highlight: "Susu creamy + jelly kenyal",
     price: 10000,
     unit: "botol",
@@ -189,14 +280,14 @@ export const products: Product[] = [
   },
   {
     id: "susu-jelly-1l",
-    name: "Susu Jelly Creamy (Botol 1 Liter)",
+    name: "Susu Jelly Creamy (1 Liter)",
     category: "Minuman",
     tag: "Hemat",
     tagTone: "emerald",
     badge: "Varian 1L",
     includes: "Porsi Keluarga",
     description:
-      "Kemasan hemat 1 Liter! Susu manis creamy dingin dengan jelly kenyal lembut. Pas untuk dinikmati bersama keluarga di rumah.",
+      "Kemasan hemat 1 Liter! Segar, dingin, dan creamy. Pas untuk dinikmati bersama keluarga di rumah.",
     highlight: "Susu creamy + jelly kenyal 1L",
     price: 35000,
     compareAt: 40000,
@@ -207,75 +298,34 @@ export const products: Product[] = [
       "Susu Jelly Creamy botol 1 Liter dingin dengan jelly kenyal untuk keluarga",
   },
   {
-    id: "paket-susu-cireng-original",
-    name: "Paket Combo Susu Cireng Original",
+    id: "paket-nyemil-creamy",
+    name: "Paket Nyemil Creamy",
     category: "Paket",
-    tag: "Hemat",
-    tagTone: "emerald",
-    badge: "Combo Hemat",
-    includes: "Cireng Original + Susu Jelly",
+    tag: "Best Seller",
+    tagTone: "amber",
+    badge: "Best Seller",
+    includes: "Cireng + Risol + Susu",
     description:
-      "Kombinasi pas cireng original bumbu rujak yang krispi dengan segarnya Susu Jelly Creamy. Hemat dan bikin kenyang.",
-    highlight: "Cireng original + susu jelly",
-    price: 23000,
-    compareAt: 25000,
+      "Teman nyemil santai: cireng, risol mayo creamy, dan Susu Jelly segar dalam satu paket hemat.",
+    highlight: "Cireng + risol mayo + susu",
+    price: 25000,
     unit: "paket",
-    isi: "2 item",
-    composition: "1 Pack Cireng Original + 1 Susu Jelly 250ml",
-    image: "/umkm/img/paket-susu-cireng-original.jpg",
+    isi: "5 item",
+    composition: "2 Cireng + 2 Risol Mayo + 1 Susu Jelly 250ml",
+    image: "/umkm/img/paket-nyemil-creamy.jpg",
     imageAlt:
-      "Paket combo cireng original bumbu rujak dengan satu botol Susu Jelly Creamy",
+      "Paket Nyemil Creamy berisi cireng, risol mayo, dan Susu Jelly Creamy",
   },
   {
-    id: "paket-pedas-creamy",
-    name: "Paket Pedas Creamy",
-    category: "Paket",
-    tag: "Pedas",
-    tagTone: "red",
-    badge: "Pedas + Creamy",
-    includes: "Cireng Ayam Pedas + Susu Jelly",
-    description:
-      "Cireng isi ayam suwir pedas nampol berpadu Susu Jelly Creamy yang menenangkan mulut. Duo pedas-creamy favorit!",
-    highlight: "Ayam pedas + susu jelly",
-    price: 28000,
-    compareAt: 30000,
-    unit: "paket",
-    isi: "2 item",
-    composition: "1 Pack Cireng Ayam Suwir Pedas + 1 Susu Jelly 250ml",
-    image: "/umkm/img/paket-pedas-creamy.jpg",
-    imageAlt:
-      "Paket Pedas Creamy berisi cireng isi ayam suwir pedas dan Susu Jelly Creamy",
-  },
-  {
-    id: "paket-dimsum-susu-jelly",
-    name: "Paket Dimsum Susu Jelly",
+    id: "paket-family-komplit",
+    name: "Paket Family Komplit (1 Liter)",
     category: "Paket",
     tag: "Favorit",
     tagTone: "orange",
-    badge: "Best Value",
-    includes: "Dimsum Ayam + Susu Jelly",
-    description:
-      "Dimsum ayam premium yang lembut gurih ditemani Susu Jelly Creamy dingin. Satu paket lengkap buat santai.",
-    highlight: "Dimsum premium + susu jelly",
-    price: 33000,
-    compareAt: 35000,
-    unit: "paket",
-    isi: "2 item",
-    composition: "1 Pack Dimsum Ayam Premium + 1 Susu Jelly 250ml",
-    image: "/umkm/img/paket-dimsum-susu.jpg",
-    imageAlt:
-      "Paket Dimsum Susu Jelly berisi dimsum ayam premium dan satu botol Susu Jelly",
-  },
-  {
-    id: "paket-family-1l",
-    name: "Paket Family Cireng & Dimsum (1 Liter)",
-    category: "Paket",
-    tag: "Hemat",
-    tagTone: "emerald",
-    badge: "Varian 1L",
+    badge: "Favorit Keluarga",
     includes: "3 Pack + Susu 1L",
     description:
-      "Porsi pas kumpul keluarga! Lengkap dengan camilan garing/gurih dan 1 Liter Susu Jelly segar.",
+      "Porsi pas kumpul keluarga sore hari! Lengkap dengan makanan gurih/pedas dan 1 Liter Susu Jelly segar.",
     highlight: "Paket keluarga + susu jelly 1L",
     price: 95000,
     unit: "paket",
@@ -284,28 +334,28 @@ export const products: Product[] = [
       "1 Pack Cireng Original + 1 Pack Cireng Ayam Pedas + 1 Pack Dimsum Ayam + 1 Botol Susu Jelly 1 Liter",
     image: "/umkm/img/paket-family.jpg",
     imageAlt:
-      "Paket Family Cireng & Dimsum 1 Liter dengan susu jelly untuk kumpul keluarga",
+      "Paket Family Komplit 1 Liter dengan cireng, dimsum, dan Susu Jelly untuk keluarga",
   },
   {
-    id: "paket-party-ramai",
-    name: "Paket Party Ramai-Ramai",
+    id: "paket-tampah-party",
+    name: "Paket Tampah / Party Warga",
     category: "Paket",
     tag: "Hemat",
     tagTone: "emerald",
-    badge: "Paling Hemat",
-    includes: "6 Pack + Susu 1L x2",
+    badge: "Hemat & Komplit",
+    includes: "Komplit untuk Acara",
     description:
-      "Solusi hemat komplit untuk pesta, arisan, mabar, atau acara kantor.",
+      "Paket komplit hemat untuk pesta, arisan komplek, mabar, atau acara keluarga besar.",
     highlight: "Paling hemat untuk acara ramai",
-    price: 180000,
-    compareAt: 190000,
+    price: 160000,
+    compareAt: 170000,
     unit: "paket",
-    isi: "8 item",
+    isi: "7 item",
     composition:
-      "2 Pack Cireng Original + 2 Pack Cireng Ayam Pedas + 2 Pack Dimsum Ayam + 2 Botol Susu Jelly 1 Liter",
-    image: "/umkm/img/paket-party.jpg",
+      "2 Pack Cireng Original & Ayam + 1 Pack Risol Mayo + 1 Pack Tahu Bakso + 1 Pack Dimsum + 2 Botol Susu Jelly 1 Liter",
+    image: "/umkm/img/paket-tampah.jpg",
     imageAlt:
-      "Paket Party Ramai-Ramai 2 botol Susu Jelly 1 Liter untuk pesta dan acara",
+      "Paket Tampah / Party Warga dengan cireng, risol, tahu bakso, dimsum, dan 2 Susu Jelly 1 Liter",
   },
 ];
 

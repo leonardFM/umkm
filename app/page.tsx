@@ -10,7 +10,7 @@ import { faqs } from "@/lib/faqs";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Jual Cireng & Dimsum Krispi Enak — Original, Ayam Pedas & Mozzarella",
+  title: "Pusat Jajanan Pasar, Cireng, Dimsum & Susu Jelly",
 };
 
 const abs = (path: string) =>
@@ -40,7 +40,7 @@ export default function Home() {
     image: abs("/umkm/img/hero-cireng.jpg"),
     logo: abs("/umkm/img/logo.svg"),
     telephone: `+${siteConfig.whatsapp}`,
-    priceRange: "Rp10.000 - Rp180.000",
+    priceRange: "Rp10.000 - Rp160.000",
     servesCuisine: "Indonesian Snack",
     currenciesAccepted: "IDR",
     paymentAccepted: "Transfer Bank, E-Wallet, QRIS, COD",
@@ -59,7 +59,7 @@ export default function Home() {
   const productListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Katalog Produk Cireng & Dimsum Cireng Abidzar",
+    name: "Katalog Jajanan Pasar, Cireng, Dimsum & Susu Jelly Cireng Abidzar",
     itemListElement: products.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,

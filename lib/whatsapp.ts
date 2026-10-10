@@ -11,7 +11,10 @@ export function orderMessage(
   detail?: string,
 ): string {
   const jumlah = qty > 0 ? qty : 1;
-  const label = detail ? `${productName} (${detail})` : productName;
+  const label =
+    detail && !productName.includes("(")
+      ? `${productName} (${detail})`
+      : productName;
   return `Halo admin, saya mau pesan: ${label} sebanyak ${jumlah} ${unit}. Mohon info total dan ongkirnya.`;
 }
 
@@ -26,7 +29,10 @@ export function multiOrderMessage(items: OrderItem[]): string {
   const lines = items
     .filter((item) => item.qty > 0)
     .map((item) => {
-      const detail = item.composition;
+      const detail =
+        item.composition && !item.name.includes("(")
+          ? item.composition
+          : undefined;
       return detail
         ? `- ${item.name} (${detail}) sebanyak ${item.qty} ${item.unit ?? "pack"}`
         : `- ${item.name} x${item.qty}`;

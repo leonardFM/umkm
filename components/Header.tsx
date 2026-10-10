@@ -7,7 +7,7 @@ import { navLinks, siteConfig } from "@/lib/site";
 import { waLink } from "@/lib/whatsapp";
 
 const heroMessage =
-  "Halo admin, saya mau pesan Cireng & Dimsum. Mohon info varian, total, dan ongkirnya.";
+  "Halo admin, saya mau order Pusat Jajanan Pasar, Cireng, Dimsum & Susu Jelly. Mohon info menu, total, dan ongkirnya.";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -37,16 +37,15 @@ export default function Header() {
     >
       <a
         href={waLink(
-          "Halo admin, saya mau pesan Cireng & Dimsum. Masih ada slot produksi fresh hari ini?",
+          "Halo admin, saya mau pesan slot PO fresh sore ini. Pengiriman serentak jam 16.00 WIB?",
         )}
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center justify-center gap-2 bg-gradient-to-r from-chili via-brand to-chili px-4 py-2 text-center text-[0.72rem] font-bold leading-snug text-cream transition-colors hover:from-chili-700 hover:to-chili-700 sm:text-xs"
       >
-        <span className="flex h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-cream" />
         <span>
-          🔥 Slot Produksi Fresh Hari Ini Terbatas — Pesan Sekarang Sebelum
-          Kehabisan!
+          🔥 Slot PO Fresh Sore Ini Terbatas! Pengiriman Serentak Jam 16.00 WIB
+          (Free Ongkir Komplek)
         </span>
       </a>
 
@@ -75,7 +74,7 @@ export default function Header() {
             className="hidden items-center gap-2 rounded-full bg-chili px-4 py-2.5 text-sm font-bold text-cream shadow-md shadow-chili/30 transition-transform hover:-translate-y-0.5 hover:bg-chili-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-chili sm:inline-flex"
           >
             <WhatsAppIcon className="h-4 w-4" />
-            Pesan via WhatsApp
+            Order via WhatsApp
           </a>
 
           <button
@@ -123,7 +122,7 @@ export default function Header() {
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-chili px-4 py-3.5 text-base font-bold text-cream shadow-md shadow-chili/30"
           >
             <WhatsAppIcon className="h-5 w-5" />
-            Pesan via WhatsApp
+            Order via WhatsApp
           </a>
           <p className="mt-1 px-4 text-center text-xs font-medium text-ink-soft/70">
             {siteConfig.hours}

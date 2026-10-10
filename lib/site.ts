@@ -1,9 +1,10 @@
 export const siteConfig = {
   name: "Cireng Abidzar",
   legalName: "Cireng Abidzar",
-  tagline: "Cireng & Dimsum — Krispi di Luar, Kenyal di Dalam",
+  tagline:
+    "Cireng Krispi • Dimsum Premium • Aneka Jajanan Pasar & Susu Jelly",
   description:
-    "Jual aneka cireng krispi (Original, Isi Ayam Pedas, Mozzarella Melt) dan dimsum premium (ayam, mentai, mozzarella, goreng crispy). Dibuat fresh setiap hari dengan kemasan vakum higienis. Pesan mudah via WhatsApp.",
+    "Dari Cireng Krispi Bumbu Rujak, Dimsum Lembut, Risol Mayo Creamy, Tahu Bakso, Pempek Crispy, hingga Susu Jelly 1 Liter Dingin. Dibuat fresh setiap hari dengan kemasan higienis!",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cireng-abidzar.vercel.app",
   whatsapp: "62895613163308",
   whatsappDisplay: "+62 895-6131-63308",

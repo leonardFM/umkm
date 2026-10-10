@@ -75,7 +75,7 @@ export default function Logo({
               tone === "light" ? "text-cream-300" : "text-ink-soft/70"
             }`}
           >
-            Cireng &amp; Dimsum
+            Jajanan Pasar • Susu Jelly
           </span>
         </span>
       )}

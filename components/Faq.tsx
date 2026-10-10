@@ -16,6 +16,22 @@ export default function Faq() {
         </p>
       </div>
 
+      <div className="mt-8 rounded-2xl border border-brand/15 bg-gradient-to-r from-cream-100 to-cream-200/70 px-5 py-5 text-center shadow-sm">
+        <p className="text-sm font-semibold text-ink-soft">
+          Terima pesanan untuk{" "}
+          <span className="font-bold text-brand-700">Arisan</span>,{" "}
+          <span className="font-bold text-brand-700">Acara Kantor</span>,{" "}
+          <span className="font-bold text-brand-700">Pengajian</span>, &amp;{" "}
+          <span className="font-bold text-brand-700">
+            Stok Freezer Rumah
+          </span>
+          .
+        </p>
+        <p className="mt-2 text-xs text-ink-soft/70">
+          Pengiriman serentak jam 16.00 WIB dengan free ongkir area komplek.
+        </p>
+      </div>
+
       <div className="mt-10 space-y-3">
         {faqs.map((item, index) => (
           <details

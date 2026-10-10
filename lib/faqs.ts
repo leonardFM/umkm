@@ -39,4 +39,20 @@ export const faqs: Faq[] = [
     answer:
       "Kami menerima transfer bank, e-wallet (GoPay, OVO, DANA, ShopeePay), dan QRIS. Untuk pesanan COD area Bandung juga tersedia. Konfirmasi pembayaran langsung melalui WhatsApp admin.",
   },
+  {
+    question: "Produk dikirim dalam kondisi frozen atau siap santap?",
+    answer:
+      "Kami menyediakan dua pilihan: Frozen (beku) untuk stok rumah yang tahan hingga 1 bulan di freezer, atau Siap Santap/Matang yang siap langsung disantap. Pilih mau frozen atau siap santap saat checkout lewat WhatsApp.",
+  },
+  {
+    question: "Berapa lama Susu Jelly Creamy bertahan di kulkas?",
+    answer:
+      "Susu Jelly Creamy paling nikmat diminum dingin. Disimpan di kulkas (suhu sekitar 4°C), kemasan 250ml tahan sekitar 2-3 hari dan kemasan 1 Liter sekitar 3-4 hari. Kocok dahulu sebelum diminum dan hindari terlalu lama di suhu ruang.",
+  },
+  {
+    question:
+      "Apakah menerima pesanan untuk acara (arisan, kantor, pengajian)?",
+    answer:
+      "Tentu! Kami menerima pesanan untuk arisan, acara kantor, pengajian, hingga stok freezer rumah. Tersedia Paket Family Komplit dan Paket Tampah/Party Warga untuk porsi besar. Cukup chat admin via WhatsApp untuk jumlah dan harga khusus.",
+  },
 ];
